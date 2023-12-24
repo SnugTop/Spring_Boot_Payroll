@@ -7,4 +7,4 @@ build:
 
 # Target to run the project
 run: build
-	mvn exec:java "-Dexec.mainClass="PayrollApplication"
+	mvn exec:java "-Dexec.mainClass="payroll.PayrollApplication"
