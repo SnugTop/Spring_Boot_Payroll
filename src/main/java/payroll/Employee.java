@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+
 /**
  * This class is a standard representation of an entity in a JPA-based application. 
  * It's designed to be mapped to a table in a relational database, where each instance 
