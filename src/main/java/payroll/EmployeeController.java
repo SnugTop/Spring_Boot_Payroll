@@ -35,9 +35,9 @@ class EmployeeController {
 
     // Single item
     // Get one employee by ID
-    @PutMapping("/employees/{id}")
+    // Get one employee by ID
+    @GetMapping("/employees/{id}")
     Employee one(@PathVariable Long id) {
-
         return repository.findById(id)
                 .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
