@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 class EmployeeController {
 
@@ -20,42 +19,49 @@ class EmployeeController {
         this.repository = repository;
     }
 
+    // Aggregate root
+    // tag::get-aggregate-root[]
+    // Get all employees
     @GetMapping("/employees")
     List<Employee> all() {
-      return repository.findAll();
-    }   
+        return repository.findAll();
+    }
 
+    // Create new employee
     @PostMapping("/employees")
     Employee newEmployee(@RequestBody Employee newEmployee) {
-      return repository.save(newEmployee);
+        return repository.save(newEmployee);
     }
 
     // Single item
-    @PutMapping("/employees/{id}")
+    // Get one employee by ID
+    // Get one employee by ID
+    @GetMapping("/employees/{id}")
     Employee one(@PathVariable Long id) {
-
         return repository.findById(id)
-            .orElseThrow(() -> new EmployeeNotFoundException(id));
+                .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
+    // Update an existing employee or create a new one if it doesn't exist
     @PutMapping("/employees/{id}")
     Employee replacEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
 
         return repository.findById(id)
-            .map(employee -> {
-              employee.setName(newEmployee.getName());
-              employee.setRole(newEmployee.getRole());
-              return repository.save(employee);
-            })
-            .orElseGet(() -> {
-              newEmployee.setId(id);
-              return repository.save(newEmployee);
-            });
+                .map(employee -> {
+                    employee.setName(newEmployee.getName());
+                    employee.setRole(newEmployee.getRole());
+                    return repository.save(employee);
+                })
+                .orElseGet(() -> {
+                    newEmployee.setId(id);
+                    return repository.save(newEmployee);
+                });
     }
 
+    // Delete an employee
     @DeleteMapping("/employees/{id}")
     void deleteEmployee(@PathVariable Long id) {
-      repository.deleteById(id);
+        repository.deleteById(id);
     }
-    
+
 }
