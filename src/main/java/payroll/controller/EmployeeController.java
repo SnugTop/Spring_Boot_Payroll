@@ -1,4 +1,4 @@
-package payroll;
+package payroll.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import payroll.exception.EmployeeNotFoundException;
+import payroll.model.Employee;
+import payroll.repository.EmployeeRepository;
 
 @RestController
 class EmployeeController {

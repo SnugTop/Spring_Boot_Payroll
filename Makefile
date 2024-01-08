@@ -3,7 +3,7 @@ all: run
 
 # Target to clean and run the project using Spring Boot
 run: 
-	./mvnw clean spring-boot:run
+	mvnw clean spring-boot:run
 	# or use mvn if you prefer
 	# mvn clean spring-boot:run
 
