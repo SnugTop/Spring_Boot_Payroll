@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//import payroll.order.Status;
 
 
 
@@ -22,7 +21,7 @@ public class Order {
 
   Order() {}
 
-  Order(String description, Status status) {
+  public Order(String description, Status status) {
 
     this.description = description;
     this.status = status;
