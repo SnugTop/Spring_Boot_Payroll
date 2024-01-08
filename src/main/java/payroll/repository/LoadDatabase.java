@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import payroll.model.Employee;
-import payroll.order.*;
+import payroll.order.Order;
+import payroll.order.OrderRepository;
 
 @Configuration
 class LoadDatabase {
