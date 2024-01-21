@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-
 /**
  * This class is a standard representation of an entity in a JPA-based application. 
  * It's designed to be mapped to a table in a relational database, where each instance 
@@ -22,7 +21,7 @@ public class Employee {
     private String lastName;
     private String role;
   
-    Employee() {}
+    public Employee() {}
   
     public Employee(String firstName, String lastName, String role) {
   

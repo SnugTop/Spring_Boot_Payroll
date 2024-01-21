@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import payroll.model.Employee;
 import payroll.order.Order;
 import payroll.order.OrderRepository;
+import payroll.order.Status;
 
 @Configuration
 class LoadDatabase {
