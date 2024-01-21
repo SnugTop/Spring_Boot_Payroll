@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import payroll.model.Employee;
-import payroll.order.Order;
-import payroll.order.OrderRepository;
+import payroll.model.Order;
+import payroll.model.Status;
 
 @Configuration
 class LoadDatabase {
@@ -28,9 +28,7 @@ class LoadDatabase {
       orderRepository.save(new Order("MacBook Pro", Status.COMPLETED));
       orderRepository.save(new Order("iPhone", Status.IN_PROGRESS));
 
-      orderRepository.findAll().forEach(order -> {
-        log.info("Preloaded " + order);
-      });
+      orderRepository.findAll().forEach(order -> log.info("Preloaded " + order));
       
     };
   }

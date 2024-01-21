@@ -1,6 +1,6 @@
-package payroll.order;
+package payroll.model;
 
-enum Status {
+public enum Status {
 
   IN_PROGRESS, //
   COMPLETED, //
