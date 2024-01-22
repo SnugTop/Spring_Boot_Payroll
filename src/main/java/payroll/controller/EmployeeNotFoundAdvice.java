@@ -11,10 +11,10 @@ import payroll.exception.EmployeeNotFoundException;
 @ControllerAdvice
 class EmployeeNotFoundAdvice {
 
-  @ResponseBody
-  @ExceptionHandler(EmployeeNotFoundException.class)
-  @ResponseStatus(HttpStatus.NOT_FOUND)
-  String employeeNotFoundHandler(EmployeeNotFoundException ex) {
-    return ex.getMessage();
-  }
+    @ResponseBody
+    @ExceptionHandler(EmployeeNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    String employeeNotFoundHandler(EmployeeNotFoundException ex) {
+        return ex.getMessage();
+    }
 }

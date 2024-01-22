@@ -22,7 +22,8 @@ public class Employee {
     private String lastName;
     private String role;
 
-    public Employee() {}
+    public Employee() {
+    }
 
     public Employee(String firstName, String lastName, String role) {
 
@@ -94,5 +95,4 @@ public class Employee {
         return "Employee{" + "id=" + this.id + ", firstName='" + this.firstName + '\'' + ", lastName='" + this.lastName
                 + '\'' + ", role='" + this.role + '\'' + '}';
     }
-
 }
