@@ -1,11 +1,10 @@
 package payroll.model;
 
-import java.util.Objects;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+import java.util.Objects;
 
 /**
  * This class is a standard representation of an entity in a JPA-based application.
@@ -23,8 +22,7 @@ public class Employee {
     private String lastName;
     private String role;
 
-    public Employee() {
-    }
+    public Employee() {}
 
     public Employee(String firstName, String lastName, String role) {
 

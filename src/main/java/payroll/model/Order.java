@@ -7,8 +7,6 @@ import jakarta.persistence.Table;
 
 import java.util.Objects;
 
-
-
 @Entity
 @Table(name = "CUSTOMER_ORDER")
 public class Order {
